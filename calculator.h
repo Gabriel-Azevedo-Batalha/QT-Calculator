@@ -14,7 +14,7 @@ class Calculator : public QMainWindow
 
 public:
     Calculator(QWidget *parent = nullptr);
-    ~Calculator();
+    ~Calculator() override;
 
 private slots:
     void clicked();

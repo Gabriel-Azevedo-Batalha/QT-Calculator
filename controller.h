@@ -9,7 +9,7 @@ class Controller
 public:
     Controller();
     ~Controller();
-    std::string compute(std::string expression);
+    std::string compute(const std::string expression);
     void parse(std::string op);
     float calculate(float firstValue, float secondValue, char op);
 

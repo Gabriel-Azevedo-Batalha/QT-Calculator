@@ -1,6 +1,7 @@
 #include "calculator.h"
 #include "./ui_calculator.h"
 #include "controller.h"
+#include "qstringliteral.h"
 #include <string>
 #include <iostream>
 
@@ -39,10 +40,10 @@ Calculator::~Calculator()
 
 void Calculator::clicked()
 {
-    QPushButton *button = (QPushButton *) sender();
+    QPushButton *button = qobject_cast<QPushButton*>(sender());
     QString currentExpression = ui->label->text();
     if (!reset) {
-        if (!currentExpression.compare("0") && button->text() != ','){
+        if (!currentExpression.compare(QStringLiteral("0")) && button->text() != ','){
             currentExpression = button->text();
         }
         else {
@@ -75,7 +76,7 @@ void Calculator::equals()
     Controller *c = new Controller();
     reset = true;
 
-    std::string result = c->compute(ui->label->text().toStdString());
+    const std::string result = c->compute(ui->label->text().toStdString());
     QString currentText = ui->label->text() + " = " + QString::fromStdString(result);
 
     model->setStringList(QStringList() << currentText << model->stringList());
