@@ -16,13 +16,11 @@ public:
     Calculator(QWidget *parent = nullptr);
     ~Calculator() override;
 
-private slots:
-    void clicked();
-    void equals();
-    void erase();
-
 private:
     bool reset;
+    void equals();
+    void erase();
+    void clicked();
     QStringListModel *model;
     Ui::Calculator *ui;
 

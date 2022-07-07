@@ -14,23 +14,23 @@ Calculator::Calculator(QWidget *parent)
     reset = false;
     model = new QStringListModel();
     ui->listView->setModel(model);
-    connect(ui->button0, SIGNAL(released()), this, SLOT(clicked()));
-    connect(ui->button1, SIGNAL(released()), this, SLOT(clicked()));
-    connect(ui->button2, SIGNAL(released()), this, SLOT(clicked()));
-    connect(ui->button3, SIGNAL(released()), this, SLOT(clicked()));
-    connect(ui->button4, SIGNAL(released()), this, SLOT(clicked()));
-    connect(ui->button5, SIGNAL(released()), this, SLOT(clicked()));
-    connect(ui->button6, SIGNAL(released()), this, SLOT(clicked()));
-    connect(ui->button7, SIGNAL(released()), this, SLOT(clicked()));
-    connect(ui->button8, SIGNAL(released()), this, SLOT(clicked()));
-    connect(ui->button9, SIGNAL(released()), this, SLOT(clicked()));
-    connect(ui->buttonSum, SIGNAL(released()), this, SLOT(clicked()));
-    connect(ui->buttonSubtract, SIGNAL(released()), this, SLOT(clicked()));
-    connect(ui->buttonMultiply, SIGNAL(released()), this, SLOT(clicked()));
-    connect(ui->buttonDivide, SIGNAL(released()), this, SLOT(clicked()));
-    connect(ui->buttonEquals, SIGNAL(released()), this, SLOT(equals()));
-    connect(ui->buttonC, SIGNAL(released()), this, SLOT(erase()));
-    connect(ui->buttonComma, SIGNAL(released()), this, SLOT(clicked()));
+    connect(ui->button0, &QPushButton::released, this, &Calculator::clicked);
+    connect(ui->button1, &QPushButton::released, this, &Calculator::clicked);
+    connect(ui->button2, &QPushButton::released, this, &Calculator::clicked);
+    connect(ui->button3, &QPushButton::released, this, &Calculator::clicked);
+    connect(ui->button4, &QPushButton::released, this, &Calculator::clicked);
+    connect(ui->button5, &QPushButton::released, this, &Calculator::clicked);
+    connect(ui->button6, &QPushButton::released, this, &Calculator::clicked);
+    connect(ui->button7, &QPushButton::released, this, &Calculator::clicked);
+    connect(ui->button8, &QPushButton::released, this, &Calculator::clicked);
+    connect(ui->button9, &QPushButton::released, this, &Calculator::clicked);
+    connect(ui->buttonSum, &QPushButton::released, this, &Calculator::clicked);
+    connect(ui->buttonSubtract, &QPushButton::released, this, &Calculator::clicked);
+    connect(ui->buttonMultiply, &QPushButton::released, this, &Calculator::clicked);
+    connect(ui->buttonDivide, &QPushButton::released, this, &Calculator::clicked);
+    connect(ui->buttonEquals, &QPushButton::released, this, &Calculator::equals);
+    connect(ui->buttonC, &QPushButton::released, this, &Calculator::erase);
+    connect(ui->buttonComma, &QPushButton::released, this, &Calculator::clicked);
 }
 
 Calculator::~Calculator()
